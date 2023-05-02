@@ -17,8 +17,8 @@ such as balance sheets and income statements.
 package org.yup.accountingledger;
 import javax.swing.*;
 import java.util.Scanner;
-import static org.yup.accountingledger.Ledger.addDeposit;
-import static org.yup.accountingledger.Ledger.makePayment;
+import static org.yup.accountingledger.menuOptions.addDeposit;
+import static org.yup.accountingledger.menuOptions.makePayment;
 
 public class AccountingLedgerApp {
 
@@ -34,8 +34,8 @@ public class AccountingLedgerApp {
                 JOptionPane.showMessageDialog(null, "Welcome to LedgerPro");
 
                 //prompt user to insert name
-                String userName;
-                userName = JOptionPane.showInputDialog("Enter your name");
+                String depositLedger = null;
+                String paymentLedger = null;
 
                 userSelection = Integer.parseInt(JOptionPane.showInputDialog(
                                 "Press 1 to add a deposit\n" +
@@ -47,14 +47,15 @@ public class AccountingLedgerApp {
                 // process user choice
                 switch (userSelection) {
                     case 1:
+                        JOptionPane.showMessageDialog(null, "You have selected add deposit");
                         // code to add a deposit
-                        addDeposit(userName);
+                        addDeposit(null);
                         break;
 
                     case 2:
                         JOptionPane.showMessageDialog(null, "You have selected make a payment");
                         // code to make a payment
-                        makePayment(userName);
+                        makePayment(null);
                         break;
 
                     case 3:

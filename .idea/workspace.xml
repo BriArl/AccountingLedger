@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="823624fe-5f57-47db-a37b-7ea20d77d9e5" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Brianna_ledger2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transactions.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transactions.csv.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brianna_ledger.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Transactions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brianna_ledger.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Brianna_ledger.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yup/accountingledger/AccountingLedgerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yup/accountingledger/AccountingLedgerApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/yup/accountingledger/Ledger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yup/accountingledger/menuOptions.java" afterDir="false" />
     </list>

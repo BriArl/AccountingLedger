@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class menuOptions {
 
@@ -107,6 +108,59 @@ public class menuOptions {
     public static void displayLedger (String displayLedger) {
         //method that displays ledger
 
+        Scanner keyboard = new Scanner(System.in);
+        int ledgerSelection = 0;
+
+        while (ledgerSelection != 4) {
+
+            JOptionPane.showMessageDialog(null, "You selected to view the ledger");
+
+            ledgerSelection = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Press 1 to view month to month entries\n" +
+                            "Press 2 to view previous month entries\n" +
+                            "Press 3 to view year to date\n" +
+                            "Press 4 to view previous year\n" +
+                            "Press 5 to search entries by vendor\n" +
+                             "Press 0 to go back to main menu\n" +
+                             "Enter your selection"));
+
+            // process user choice
+            switch (ledgerSelection) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Here are you month to month entries: ");
+                    // code to display month to month entries
+
+                    break;
+
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Here are your previous month entries: ");
+                    // code to display previous month entries
+
+                    break;
+
+                case 3:
+                    JOptionPane.showMessageDialog(null, "Here are your year to date entries: ");
+                    // code to display year to date
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "Here are your entries from the previous year: ");
+                    //display previous year entries
+                    break;
+
+                case 5:
+                    JOptionPane.showInputDialog(null, "You selected search by vendor\n type vendor name below: ");
+                    //code that allows user to search for specific vendor via csv file
+                    break;
+
+                case 0:
+                    //takes user back to main menu
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null, "You chose an invalid option...try again.");
+                    break;
+            }
+        }
 
     }
 

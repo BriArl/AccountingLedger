@@ -33,7 +33,6 @@ public class AccountingLedgerApp {
 
                 JOptionPane.showMessageDialog(null, "Welcome to LedgerPro");
 
-                //prompt user to insert name
                 String depositLedger = null;
                 String paymentLedger = null;
 

@@ -33,7 +33,7 @@ public class menuOptions {
                 FileWriter writer = new FileWriter("Transactions.csv", true);
 
                 // write payment data to the file
-                writer.write(dateTime + "|" + paymentDesc + "|" + vendorName + "|" + depositTotal);
+                writer.write(dateTime + "|" + paymentDesc + "|" + vendorName + "|" + depositTotal );
                 writer.close();
 
 
@@ -109,6 +109,7 @@ public class menuOptions {
         //method that displays ledger
 
         Scanner keyboard = new Scanner(System.in);
+
         int ledgerSelection = 0;
 
         while (ledgerSelection != 4) {
@@ -127,7 +128,7 @@ public class menuOptions {
             // process user choice
             switch (ledgerSelection) {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Here are you month to month entries: ");
+                    JOptionPane.showMessageDialog(null, "Here are your" + " month to month entries: ");
                     // code to display month to month entries
 
                     break;

@@ -17,8 +17,8 @@ such as balance sheets and income statements.
 package org.yup.accountingledger;
 import javax.swing.*;
 import java.util.Scanner;
-import static org.yup.accountingledger.menuOptions.addDeposit;
-import static org.yup.accountingledger.menuOptions.makePayment;
+
+import static org.yup.accountingledger.menuOptions.*;
 
 public class AccountingLedgerApp {
 
@@ -48,18 +48,18 @@ public class AccountingLedgerApp {
                     case 1:
                         JOptionPane.showMessageDialog(null, "You have selected add deposit");
                         // code to add a deposit
-                        addDeposit(null);
+                        addDeposit();
                         break;
 
                     case 2:
                         JOptionPane.showMessageDialog(null, "You have selected make a payment");
                         // code to make a payment
-                        makePayment(null);
+                        makePayment();
                         break;
 
                     case 3:
                         JOptionPane.showMessageDialog(null, "You have selected display ledger");
-                        // code to display ledger
+                        displayLedger();
                         break;
                     case 4:
                         JOptionPane.showMessageDialog(null, "You have selected exit\n Goodbye!");

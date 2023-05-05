@@ -30,11 +30,17 @@ public class menuOptions {
         addDepositPanel.add(depositTotal);
         int result = JOptionPane.showConfirmDialog(null, addDepositPanel, "Add Deposit", JOptionPane.OK_CANCEL_OPTION);
 
-
+        int willThatBeAll = JOptionPane.showConfirmDialog(null, "Deposit added. Will that be all?");
+        if (willThatBeAll == JOptionPane.NO_OPTION){
+        } else {
+            //exit the program
+            JOptionPane.showMessageDialog(null, "Goodbye!");
+            System.exit(0);
+        }
 
 
         //deposit confirmation
-        if (result == JOptionPane.OK_CANCEL_OPTION) {
+        if (result == JOptionPane.OK_OPTION) {
             double amountTotal = Double.parseDouble(depositTotal.getText());
 
             try {
@@ -45,7 +51,7 @@ public class menuOptions {
                 String formatDateTimeEntry = dateTime.format(formatEntryDate);
 
                 // write payment data to the file
-                writer.write(formatDateTimeEntry + "|" + paymentDesc + "|" + vendorName + "|" + depositTotal + "\n" );
+                writer.write(formatDateTimeEntry + "|" + paymentDesc.getText() + "|" + vendorName.getText() + "|" + depositTotal.getText() + "\n" );
 
 
                 writer.close();
@@ -54,13 +60,7 @@ public class menuOptions {
                 //allow the user to decide weather they would like to exit
                 //or select another menu option
 
-                int willThatBeAll = JOptionPane.showConfirmDialog(null, "Deposit added. Will that be all?");
-                if (willThatBeAll == JOptionPane.NO_OPTION){
-                } else {
-                    //exit the program
-                    JOptionPane.showMessageDialog(null, "Goodbye!");
-                    System.exit(0);
-                }
+
 
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error adding deposit. Please try again.");
@@ -75,11 +75,6 @@ public class menuOptions {
        // get the date and time of the transaction
         LocalDateTime dateTime = LocalDateTime.now();
 
-
-        //method that takes payment from user
-        String makePaymentTotalString = JOptionPane.showInputDialog("Enter the payment amount: ");
-
-
         //get deposit information on ONE page
         JPanel makePaymentPanel = new JPanel();
         makePaymentPanel.setLayout(new GridLayout(3, 2));
@@ -92,12 +87,23 @@ public class menuOptions {
         makePaymentPanel.add(vendorName);
         makePaymentPanel.add(new JLabel("Enter the payment amount"));
         makePaymentPanel.add(makePaymentTotal);
-
         int result = JOptionPane.showConfirmDialog(null, makePaymentPanel, "Please confirm you'd like to make this payment", JOptionPane.OK_CANCEL_OPTION);
 
+        //allow the user to decide weather they would like to exit
+        //or select another menu option
+
+        int willThatBeAll = JOptionPane.showConfirmDialog(null, "Payment made. Will that be all?");
+        if (willThatBeAll == JOptionPane.OK_CANCEL_OPTION){
+
+        } else {
+
+            //exit the program
+            JOptionPane.showMessageDialog(null, "Goodbye!");
+            System.exit(0);
+        }
 
         // payment confirmation
-        if (result == JOptionPane.OK_CANCEL_OPTION) {
+        if (result == JOptionPane.OK_OPTION) {
             double amountTotal = Double.parseDouble(makePaymentTotal.getText());
 
 
@@ -109,23 +115,12 @@ public class menuOptions {
                 String formatDateTimeEntry = dateTime.format(formatEntryDate);
 
                 //write header to the files
-                writer.write(formatDateTimeEntry + "|" + paymentDesc + "|" + vendorName + "|" + makePaymentTotal + "\n");
+                writer.write(formatDateTimeEntry + "|" + paymentDesc.getText() + "|" + vendorName.getText() + "|" + makePaymentTotal.getText() + "\n");
 
 
                 writer.close();
 
-                //allow the user to decide weather they would like to exit
-                //or select another menu option
 
-                int willThatBeAll = JOptionPane.showConfirmDialog(null, "Payment posted. Will that be all?");
-                if (willThatBeAll == JOptionPane.NO_OPTION){
-
-                } else {
-
-                    //exit the program
-                    JOptionPane.showMessageDialog(null, "Goodbye!");
-                    System.exit(0);
-                }
 
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "Error taking payment. Please try again.");
